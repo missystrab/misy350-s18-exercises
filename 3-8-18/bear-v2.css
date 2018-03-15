@@ -30,8 +30,31 @@ nav a {
   color: #F4C7A8;
 }
 
+.buttons a {
+  border: 1px solid #F49C6A;
+  padding: 1px 0px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background: #F49C6A;
+  border: 1px solid red;
+  border-radius: 1px;
+  color: white;
+  display: inline;
+  margin: 1px;
+  padding: 1px;
+  text-decoration: none;
+}
+
+.buttons a:hover {
+  background: white;
+  border: 1px solid #F49C6A;
+  color: #F49C6A;
+}
+
 ul {
   text-align: center;
+  word-spacing: 25px;
 }
 
 li {
@@ -52,28 +75,4 @@ ul a {
 
 .image {
   border-radius: 100%;
-}
-
-.navigation {
-  border: 1px solid #F49C6A;
-  padding: 40px 0px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-
-.navigation a {
-  background: #F49C6A;
-  border: 1px solid #F49C6A;
-  border-radius: 3px;
-  color: white;
-  display: inline-block;
-  margin: 10px;
-  padding: 14px;
-  text-decoration: none;
-}
-.navigation a:hover {
-  background: white;
-  border: 1px solid #F49C6A;
-  color: #F49C6A;
 }
