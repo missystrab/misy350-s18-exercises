@@ -6,7 +6,7 @@
   <div class="container">
     <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Actors:</h1>
     <div class="row bottom-margin">
-      <a href="/actor/add" class="btn btn-primary" role="button" aria-disabled="true">Add Actors</a>
+      <a href="/actors/add" class="btn btn-primary" role="button" aria-disabled="true">Add Actors</a>
     </div>
     {% if actors %}
       <table class="table">
@@ -25,8 +25,8 @@
               <td>{{actor.name}}</td>
               <td>{{actor.about}}</td>
               <td>
-                <a href="/actor/edit/{{actor.id}}" class="btn btn-success" role="button">Edit</a>
-                <a href="/actor/delete/{{actor.id}}" class="btn btn-danger" role="button">Delete</a>
+                <a href="/actors/edit/{{actor.id}}" class="btn btn-success" role="button">Edit</a>
+                <a href="/actors/delete/{{actor.id}}" class="btn btn-danger" role="button">Delete</a>
                 <button class="btn btn-warning delete_ajax_btn" role="button" data-actor-id="{{actor.id}}">Delete Ajax</a>
               </td>
           </tr>
@@ -34,7 +34,7 @@
         </tbody>
       </table>
     {% else %}
-      <h3>there are no actors in the database yet.</h3>
+      <h3>There are no actors in the database yet.</h3>
     {% endif %}
   </div>
 
@@ -63,7 +63,7 @@
           if (isConfirm) {
             $.ajax({
                 type: "DELETE",
-                url: "/api/actor/" + actor,
+                url: "/api/actors/" + actor_id,
                 success: function(response) {
                   console.log(response);
                   row.remove(); // remove the table row

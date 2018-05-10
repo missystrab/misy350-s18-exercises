@@ -1,11 +1,11 @@
 {% extends "home-base.html"%}
-{% block title %}Add Actors{% endblock %}
-{% block page_content%}
 
-  <!-- Page Content -->
+{% block title %}Add Actors{% endblock %}
+
+{% block page_content%}
   <div class="container">
-    <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Add Actors:</h1>
-    <form action="/actors/add" method="post" id="add-actor-form">
+    <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Add Actors:</h1>
+    <form action="/actors/add/" method="post" id="add-actor-form">
       <div class="form-group">
         <label>Name</label>
         <input class="form-control" type="text" name="name" placeholder="Name of the Actor" required="true">
@@ -29,7 +29,7 @@
       event.preventDefault(); // prevent the button to submit the form
       $.ajax({
           type: "POST",
-          url: "/api/actor/add",
+          url: "/api/actors/add" + actor_id
           data: $("#add-actor-form").serialize(),
           success: function(response) {
             window.location.replace("/actors"); // redirect
