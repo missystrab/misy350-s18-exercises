@@ -1,8 +1,7 @@
-{% extends "home-base.html"%}
+{% extends "base.html"%}
 {% block title %}Delete Actor{% endblock %}
 {% block page_content%}
 
-  <!-- Page Content -->
   <div class="container">
     <h1 class="mt-5"><i class="fa fa-movie" aria-hidden="true"></i> Delete Actor:</h1>
     <form action="/actors/delete/{{actor.id}}" method="post">

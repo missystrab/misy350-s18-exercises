@@ -1,8 +1,7 @@
-{% extends "home-base.html"%}
+{% extends "base.html"%}
 {% block title %}Edit Actor{% endblock %}
 {% block page_content%}
 
-  <!-- Page Content -->
   <div class="container">
     <h1 class="mt-5"><i class="fa fa-music" aria-hidden="true"></i> Edit Actor:</h1>
     <form action="/actors/edit/{{actor.id}}" method="post">

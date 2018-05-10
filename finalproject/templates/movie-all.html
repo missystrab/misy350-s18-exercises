@@ -1,8 +1,7 @@
-{% extends "home-base.html"%}
+{% extends "base.html"%}
 {% block title %}All Movies{% endblock %}
 {% block page_content%}
 
-<!-- Page Content -->
 <div class="container">
   <h1 class="mt-5"><i class="fa fa-film" aria-hidden="true"></i> Movies:</h1>
   <div class="row bottom-margin">
@@ -28,7 +27,6 @@
         <td>{{movie.actor.name}}</td>
         <td>
 
-          <!-- Modal -->
           <div class="modal fade" id="{{movie.id}}" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -67,11 +65,9 @@
   $(document).ready(function() {
     $(".delete_ajax_btn").click(function(event) {
       var movie_id = $(this).data("movie-id");
-      // get the table row of this movie
       var row = $(this).parent().parent();
       swal({
           title: "Are you sure?",
-          // text: "You are going to delete movie" + movie.id + ".",
           type: "warning",
           html: true,
           showCancelButton: true,
@@ -87,29 +83,28 @@
                 url: "/api/movie/" + movie_id,
                 success: function(response) {
                   console.log(response);
-                  row.remove(); // remove the table row
+                  row.remove();
                   swal({
                     title: "Deleted!",
                     text: response.name + " has been deleted.",
                     type: "success",
                     timer: 2500,
                     showConfirmButton: false
-                  }); // end of SweetAlert
-                } // end of success callback function
-              }) // end of ajax call
+                  });
+                }
+              })
               .fail(function(error) {
-                // console.log(data);
                 swal({
                   title: "Oops...",
                   text: "Deletion failed",
                   type: "error",
                   timer: 2000,
                   showConfirmButton: false
-                }); // end of SweetAlert
-              }); // end of fail callback function
-          } // end of if confirmed block
-        }); // end of confirmed function of SweetAlert
-    }); // end of button click event function
-  }); // end doc ready
+                });
+              });
+          }
+        });
+    });
+  });
 </script>
 {% endblock%}

@@ -1,6 +1,10 @@
 body {
   padding-top: 54px;
-  font-family: 'Karla', sans-serif;
+}
+
+p {
+  font-family: 'Pangolin', cursive;
+  color: red !important;
 }
 
 .bottom-margin {

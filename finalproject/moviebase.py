@@ -156,24 +156,6 @@ def delete_ajax_movie(id):
 def about():
     return render_template('about.html')
 
-# FORM ROUTE
-@app.route('/form-demo', methods=['GET', 'POST'])
-def form_demo():
-    if request.method == 'GET':
-        first_name = request.args.get('first_name')
-        if first_name:
-            return render_template('form-demo.html', first_name=first_name)
-        else:
-            return render_template('form-demo.html', first_name=session.get('first_name'))
-    if request.method == 'POST':
-        session['first_name'] = request.form['first_name']
-        return redirect(url_for('form_demo'))
-
-# GET MOVIE ID ROUTE
-@app.route('/movie/<int:id>/')
-def get_movie_id(id):
-    return "Hi, this is %s and the movie's id is %d" % ('administrator', id)
-
 # RUN PROGRAM
 if __name__ == '__main__':
     app.run()
