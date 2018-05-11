@@ -1,19 +1,19 @@
 {% extends "base.html"%}
-{% block title %}Add Movies{% endblock %}
+{% block title %}Edit Movie{% endblock %}
 {% block page_content%}
 
   <div class="container">
-    <h1 class="mt-5"><i class="fa fa-film" aria-hidden="true"></i> Add Movies:</h1>
-    <form action="/movie/add" method="post">
+    <h1 class="mt-5"><i class="fa fa-film" aria-hidden="true"></i> Edit Movie:</h1>
+    <form action="/movie/edit/{{movie.id}}" method="post">
       <div class="form-group">
         <label>Name</label>
-        <input class="form-control" type="text" name="name" placeholder="Name of the Movie" required="true">
+        <input class="form-control" type="text" name="name" value="{{movie.name}}" required="true">
       </div>
       <div class="form-group">
         <label>Year</label>
         <select class="form-control" name="year">
           {% for i in range(1950, 2025) %}
-            {% if i == 2017 %}
+            {% if i == movie.year %}
               <option selected="selected">{{i}}</option>
             {% else %}
               <option>{{i}}</option>
@@ -25,14 +25,18 @@
         <label>Actor</label>
         <select class="form-control" name="actor">
           {% for actor in actors %}
+            {% if actor == movie.actor %}
+              <option selected="selected">{{actor.name}}</option>
+            {% else %}
               <option>{{actor.name}}</option>
+            {% endif %}
           {% endfor %}
         </select>
       </div>
       <div class="form-group">
-        Actor not in the list? <a href="/actors/add/" class="btn btn-success" role="button" aria-disabled="true">Add Actors</a>
+        Actor not in the list? <a href="/actors/add/" id="addbutton" class="btn btn-success" role="button" aria-disabled="true">Add Actors</a>
       </div>
-      <button type="submit" class="btn btn-primary">Add Movie</button>
+      <button type="submit" id="editbutton" class="btn btn-primary">Save Changes</button>
     </form>
   </div>
 

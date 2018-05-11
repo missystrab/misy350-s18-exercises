@@ -1,0 +1,54 @@
+body {
+  padding-top: 54px;
+}
+
+h1, h2, h3, h4, h5, p, li, a, button, table, form{
+  font-family: 'Advent Pro', sans-serif !important;
+  color: navy !important;
+}
+
+#editbutton {
+  background-color: #00CED1 !important;
+  border-color: #00CED1 !important;
+}
+
+#deletebutton {
+  background-color: #00BFFF !important;
+  border-color: #00BFFF !important;
+}
+
+#addbutton {
+  background-color: #1E90FF !important;
+  border-color: #1E90FF !important;
+}
+
+#ajaxbutton {
+  background-color: #87CEFA !important;
+  border-color: #87CEFA !important;
+}
+
+.bottom-margin {
+  margin-bottom: 10px;
+}
+
+.navbar {
+  background-color: #ADD8E6;
+  border-bottom: navy;
+}
+
+.movie {
+  width: 200px;
+  height: 100px;
+}
+
+#profile {
+  border: 5px;
+  padding: 10px;
+  background-color: #ADD8E6;
+}
+
+#logo {
+  border: 2px;
+  padding: 5px;
+  background-color: #87CEFA;
+}

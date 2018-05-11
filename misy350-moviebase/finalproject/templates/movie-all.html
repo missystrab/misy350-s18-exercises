@@ -5,7 +5,7 @@
 <div class="container">
   <h1 class="mt-5"><i class="fa fa-film" aria-hidden="true"></i> Movies:</h1>
   <div class="row bottom-margin">
-    <a href="/movie/add" class="btn btn-primary" role="button" aria-disabled="true">Add Movies</a>
+    <a href="/movie/add" id="addbutton" class="btn btn-primary" role="button" aria-disabled="true">Add Movies</a>
   </div>
   {% if movies %}
   <table class="table">
@@ -32,21 +32,21 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">{{movie.name}}</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" id="addbutton" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button id="deletebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
         </td>
         <td>
-          <a href="/movie/edit/{{movie.id}}" class="btn btn-success" role="button" aria-disabled="true">Edit</a>
-          <a href="/movie/delete/{{movie.id}}" class="btn btn-danger" role="button" aria-disabled="true">Delete</a>
-          <button class="btn btn-warning delete_ajax_btn" data-movie-id={{movie.id}}>Delete Ajax</button>
+          <a href="/movie/edit/{{movie.id}}" id="editbutton" class="btn btn-success" role="button" aria-disabled="true">Edit</a>
+          <a href="/movie/delete/{{movie.id}}" id="deletebutton" class="btn btn-danger" role="button" aria-disabled="true">Delete</a>
+          <button class="btn btn-warning delete_ajax_btn" id="ajaxbutton" data-movie-id={{movie.id}}>Delete Ajax</button>
         </td>
       </tr>
 

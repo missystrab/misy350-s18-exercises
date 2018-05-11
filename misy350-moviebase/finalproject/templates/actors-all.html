@@ -5,7 +5,7 @@
   <div class="container">
     <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Actors:</h1>
     <div class="row bottom-margin">
-      <a href="/actors/add" class="btn btn-primary" role="button" aria-disabled="true">Add Actors</a>
+      <a href="/actors/add" id="addbutton" class="btn btn-primary" role="button" aria-disabled="true">Add Actors</a>
     </div>
     {% if actors %}
       <table class="table">
@@ -24,9 +24,9 @@
               <td>{{actor.name}}</td>
               <td>{{actor.about}}</td>
               <td>
-                <a href="/actors/edit/{{actor.id}}" class="btn btn-success" role="button">Edit</a>
-                <a href="/actors/delete/{{actor.id}}" class="btn btn-danger" role="button">Delete</a>
-                <button class="btn btn-warning delete_ajax_btn" role="button" data-actor-id="{{actor.id}}">Delete Ajax</a>
+                <a href="/actors/edit/{{actor.id}}" id="editbutton" class="btn btn-success" role="button">Edit</a>
+                <a href="/actors/delete/{{actor.id}}" id="deletebutton" class="btn btn-danger" role="button">Delete</a>
+                <button class="btn btn-warning delete_ajax_btn" id="ajaxbutton" role="button" data-actor-id="{{actor.id}}">Delete Ajax</a>
               </td>
           </tr>
           {% endfor%}

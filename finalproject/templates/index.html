@@ -1,24 +1,9 @@
-{% extends "base.html"%}
-{% block title %}Home Page{% endblock %}
-{% block head%}
-  {{ super() }}
-{% endblock%}
-{% block page_content%}
+<!--A homepage to show your project title and description-->
 
-  <div class="container">
-    <p>nothing</p>
-    <h1>Welcome to MovieBase!</h1>
-    <p>This is my final project for MISY350 at the University of Delaware!</p>
-    <p>The database I created is a movie database that holds both actors
-    and movies.  It always users to add, edit, and delete actors from a table as
-    well as add, edit, and delete movies from a table.  These features are enabled
-    through forms and extensions from a base webpage.  Each page shares the same
-    format and navigation bar on the top of the page.</p>
-    <p>I have created two tables: one for the Actors and one for the Movies. The
-      columns in the Actors table are: name, about.  The columns in the Movies
-      table are: name, year, actor.  It is a one to many relationship because one
-      actor can be involved with many movies.  The actor field in the movies table
-      links the two tables together.</p>
-  </div>
+{% extends "base.html" %}
 
-{% endblock%}
+{% block title %} Homepage: Movie Database {% endblock %}
+
+{% block content %}
+<h1>Database Description here</h1>
+{% endblock %}
